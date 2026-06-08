@@ -1,1 +1,585 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advanced Grammar in Use — Super Short Must-Know</title>
 
+<style>
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#f0fdf4;
+  color:#172033;
+  line-height:1.6;
+  user-select:none;
+}
+.hero{
+  background:linear-gradient(135deg,#064e3b,#15803d,#65a30d);
+  color:white;
+  text-align:center;
+  padding:44px 16px 34px;
+}
+.book{
+  display:inline-block;
+  background:rgba(255,255,255,.16);
+  border:1px solid rgba(255,255,255,.3);
+  padding:8px 14px;
+  border-radius:999px;
+  font-weight:800;
+  margin-bottom:12px;
+}
+h1{margin:0;font-size:36px;line-height:1.15}
+.subtitle{max-width:850px;margin:12px auto 0;font-size:17px}
+.notice{
+  max-width:780px;
+  margin:18px auto 0;
+  background:#fef3c7;
+  color:#78350f;
+  border:2px solid #facc15;
+  border-radius:18px;
+  padding:14px;
+  font-weight:700;
+}
+.source{
+  max-width:780px;
+  margin:10px auto 0;
+  background:rgba(255,255,255,.14);
+  border:1px solid rgba(255,255,255,.28);
+  border-radius:16px;
+  padding:11px;
+  font-size:14px;
+}
+.nav{
+  position:sticky;
+  top:0;
+  z-index:20;
+  background:rgba(255,255,255,.96);
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  padding:10px;
+  border-bottom:1px solid #bbf7d0;
+}
+.nav::-webkit-scrollbar{display:none}
+.nav a{
+  flex:0 0 auto;
+  text-decoration:none;
+  background:#ecfdf5;
+  color:#166534;
+  border:1px solid #86efac;
+  border-radius:999px;
+  padding:7px 12px;
+  font-weight:800;
+  font-size:13px;
+}
+.wrap{max-width:1050px;margin:28px auto 60px;padding:0 14px}
+.card{
+  background:white;
+  border:1px solid #bbf7d0;
+  border-radius:24px;
+  padding:22px;
+  margin-bottom:26px;
+  box-shadow:0 14px 34px rgba(15,23,42,.09);
+  scroll-margin-top:80px;
+}
+h2{margin:0;color:#166534;font-size:25px}
+.desc{
+  margin-top:10px;
+  background:#f0fdf4;
+  border-left:5px solid #22c55e;
+  border-radius:12px;
+  padding:10px 12px;
+}
+.langbox{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:14px;
+  margin:16px 0;
+}
+.lang{
+  background:#f8fafc;
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:14px;
+}
+.lang h3{margin:0 0 8px;color:#166534}
+.keybox{
+  background:#ecfdf5;
+  border:1px solid #86efac;
+  border-left:5px solid #16a34a;
+  border-radius:16px;
+  padding:14px;
+  margin:14px 0;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:8px;
+}
+.pill{
+  background:white;
+  border:1px solid #bbf7d0;
+  border-radius:12px;
+  padding:9px 11px;
+  font-size:14px;
+}
+.q{
+  border:1px solid #e5e7eb;
+  border-radius:16px;
+  padding:15px;
+  margin:13px 0;
+}
+.qtag{
+  display:inline-block;
+  font-size:12px;
+  font-weight:800;
+  color:#166534;
+  background:#dcfce7;
+  border-radius:999px;
+  padding:4px 9px;
+  margin-bottom:7px;
+}
+.qtitle{font-weight:800;margin-bottom:9px}
+.opt{
+  display:block;
+  margin:7px 0;
+  padding:10px 12px;
+  border-radius:12px;
+  background:#fafafa;
+  border:1px solid #f1f5f9;
+  cursor:pointer;
+}
+.btn{
+  border:0;
+  border-radius:15px;
+  background:linear-gradient(135deg,#15803d,#65a30d);
+  color:white;
+  font-size:15px;
+  font-weight:800;
+  padding:12px 20px;
+  cursor:pointer;
+}
+.summary,.ans{
+  border-radius:15px;
+  padding:14px;
+  margin:12px 0;
+  border:1px solid #e5e7eb;
+}
+.summary{background:#ecfdf5;border-color:#86efac}
+.ok{background:#ecfdf5;border-color:#86efac}
+.bad{background:#fff1f2;border-color:#fecdd3}
+.oktxt{color:#15803d;font-weight:800}
+.badtxt{color:#be123c;font-weight:800}
+.ex{margin-top:7px;font-size:14px}
+.footer{text-align:center;color:#64748b;margin-top:28px;font-size:14px}
+
+@media(max-width:800px){
+  h1{font-size:29px}
+  .langbox{grid-template-columns:1fr}
+  .grid{grid-template-columns:1fr}
+  .card{padding:17px}
+}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+  <div class="book">Cambridge Grammar</div>
+  <h1>Advanced Grammar in Use<br>Super Short Must-Know</h1>
+  <div class="subtitle">
+    Өте қысқа advanced grammar review: тек бұрынғы сайттарда қайталанбаған ең керек нәрселер.
+  </div>
+  <div class="notice">
+    © @elnazm_ln<br>
+    Бұл авторлық жұмыс. Көшіруге, қайта сатуға және таратуға тыйым салынады.
+    <small>Это авторская работа. Копировать, перепродавать и распространять запрещено.</small>
+  </div>
+  <div class="source">
+    <b>Source:</b> Advanced Grammar in Use — Martin Hewings, Cambridge University Press
+  </div>
+</section>
+
+<nav class="nav" id="nav"></nav>
+<main class="wrap" id="app"></main>
+
+<script>
+const DATA = [
+{
+id:"b1",
+title:"1 — State verbs in continuous",
+desc:"Advanced point: some state verbs can be continuous when the meaning is temporary or action-like.",
+kazakh:`<h3>Қазақша</h3><p>Кейбір state verbs continuous бола алады, егер мағына уақытша немесе action сияқты болса: <b>I’m loving it</b>, <b>I’m regretting it</b>. Бірақ <b>believe, know, own</b> сияқты verbs көбіне simple болады.</p>`,
+russian:`<h3>Русский</h3><p>Некоторые state verbs можно ставить в continuous, если смысл временный или похож на действие: <b>I’m loving it</b>. Но <b>believe, know, own</b> обычно остаются в simple.</p>`,
+mustknow:[
+"Temporary feeling: I’m loving it.",
+"Regret can be progressive: I’m regretting it.",
+"Believe / know / own rarely continuous.",
+"Appear = seem → simple.",
+"Appear = perform → continuous possible."
+],
+questions:[
+{q:"Choose the correct option: I ______ my decision more and more.",a:"am regretting",options:["am regretting","regret only","am knowing","am owning"],e:"Regret can be continuous when the feeling is developing now."},
+{q:"Choose the correct option: I ______ you now.",a:"believe",options:["believe","am believing","believing","am believed"],e:"Believe is usually a state verb, so simple is correct."},
+{q:"Choose the correct option: She ______ in a musical this month.",a:"is appearing",options:["is appearing","appears only","appear","is appeared"],e:"Appear means perform here, so continuous is possible."},
+{q:"Choose the correct option: This bag ______ a lot.",a:"weighs",options:["weighs","is weighing","weighing","is weighed"],e:"Weigh as state/measurement usually takes simple."},
+{q:"Choose the correct option: He ______ taking early retirement.",a:"is considering",options:["is considering","considers taking","is believing","owns"],e:"Consider meaning think carefully about is used in continuous."}
+]
+},
+{
+id:"b2",
+title:"2 — Be to / be about to",
+desc:"Advanced future: formal plans, official arrangements and very near future.",
+kazakh:`<h3>Қазақша</h3><p><b>Be to</b> — ресми жоспар/тәртіп: <i>The president is to visit</i>. <b>Be about to</b> — дәл қазір болайын деп тұр: <i>The train is about to leave</i>.</p>`,
+russian:`<h3>Русский</h3><p><b>Be to</b> — официальный план или распоряжение. <b>Be about to</b> — действие вот-вот произойдёт.</p>`,
+mustknow:[
+"be to = formal arrangement",
+"be to = official instruction",
+"be about to = very soon",
+"Not usually with exact future time",
+"Was/were to = future seen from past"
+],
+questions:[
+{q:"Choose the correct option: The minister ______ the city tomorrow.",a:"is to visit",options:["is to visit","is about to visit tomorrow","visit","about visits"],e:"Be to is used for formal/official future plans."},
+{q:"Choose the correct option: Hurry! The train ______ leave.",a:"is about to",options:["is about to","is to yesterday","will to","about"],e:"Be about to means something will happen very soon."},
+{q:"Choose the correct option: The law ______ come into force next year.",a:"is to",options:["is to","is about to","about","to"],e:"Be to works for official arrangements."},
+{q:"Choose the correct option: She was ______ become one of the greatest scientists.",a:"to",options:["to","about","going","will"],e:"Was/were to can show future from a past viewpoint."},
+{q:"Choose the incorrect sentence:",a:"The plane is about to leave next month.",options:["The plane is about to leave next month.","The plane is about to leave.","The president is to speak.","The rule is to change."],e:"Be about to is for very near future, not next month."}
+]
+},
+{
+id:"b3",
+title:"3 — Passive reporting",
+desc:"Academic style: It is said that..., He is thought to..., The system is believed to...",
+kazakh:`<h3>Қазақша</h3><p>Academic English-та passive reporting өте пайдалы: <b>It is believed that...</b>, <b>He is thought to...</b>. Бұл стиль neutral және formal естіледі.</p>`,
+russian:`<h3>Русский</h3><p>Passive reporting нужен для формального академического стиля: <b>It is believed that...</b>, <b>He is thought to...</b>. Он звучит нейтрально.</p>`,
+mustknow:[
+"It is said that...",
+"It is believed that...",
+"He is thought to...",
+"It was reported that...",
+"Use for neutral academic reporting."
+],
+questions:[
+{q:"Choose the correct option: It ______ that the theory is incomplete.",a:"is believed",options:["is believed","believes","is believing","believed"],e:"It is believed that is passive reporting."},
+{q:"Choose the correct option: The author ______ to have changed the argument.",a:"is thought",options:["is thought","thinks","is thinking","thought"],e:"Person + is thought + to-infinitive."},
+{q:"Choose the correct option: It was ______ that the results were unreliable.",a:"reported",options:["reported","report","reporting","reports"],e:"It was reported that is correct passive reporting."},
+{q:"Which sounds most academic?",a:"It is argued that the evidence is limited.",options:["It is argued that the evidence is limited.","People say stuff.","I think maybe.","Everybody knows it."],e:"Passive reporting is more formal and neutral."},
+{q:"Choose the correct option: The method is believed ______ effective.",a:"to be",options:["to be","being","be","is"],e:"Believed + to be is correct."}
+]
+},
+{
+id:"b4",
+title:"4 — Subjunctive / should",
+desc:"Formal grammar after important, essential, suggest, demand, recommend.",
+kazakh:`<h3>Қазақша</h3><p>Formal English-та <b>that + base verb</b> қолданылады: <i>It is essential that he be informed</i>. British English-та <b>should</b> да жиі келеді: <i>that he should be informed</i>.</p>`,
+russian:`<h3>Русский</h3><p>В formal English после essential, important, suggest, demand можно использовать <b>that + base verb</b>: <i>he be informed</i>. Также возможно <b>should</b>.</p>`,
+mustknow:[
+"It is essential that he be...",
+"It is important that she attend...",
+"They suggested that he leave.",
+"British English: should + base verb.",
+"No -s in subjunctive form."
+],
+questions:[
+{q:"Choose the correct option: It is essential that he ______ informed.",a:"be",options:["be","is","was","being"],e:"Subjunctive uses base verb: be."},
+{q:"Choose the correct option: They recommended that she ______ earlier.",a:"arrive",options:["arrive","arrives","arrived","arriving"],e:"After recommend that, use base verb in formal style."},
+{q:"Choose the correct option: It is important that every student ______ the form.",a:"complete",options:["complete","completes","completed","is completing"],e:"Subjunctive form has no -s."},
+{q:"Choose the British alternative: It is vital that he ______ attend.",a:"should",options:["should","musts","does","is"],e:"Should + base verb is common in British English."},
+{q:"Which sentence is formal and correct?",a:"The committee demanded that the report be rewritten.",options:["The committee demanded that the report be rewritten.","The committee demanded that the report is rewritten.","The committee demanded rewrite report.","The committee demanded that rewritten."],e:"Demanded that + base passive form: be rewritten."}
+]
+},
+
+  {
+id:"b5",
+title:"5 — Advanced agreement",
+desc:"Subject–verb agreement when the subject is long, collective, or separated from the verb.",
+kazakh:`<h3>Қазақша</h3><p>Етістік негізгі subject-пен келіседі, арадағы phrase-пен емес. Collective nouns singular немесе plural бола алады, мағынаға байланысты.</p>`,
+russian:`<h3>Русский</h3><p>Глагол согласуется с главным subject, а не со словами между subject и verb. Collective nouns могут быть singular или plural по смыслу.</p>`,
+mustknow:[
+"Find the real subject.",
+"Ignore phrases between subject and verb.",
+"The number of... = singular.",
+"A number of... = plural.",
+"Team/family/government: singular or plural by meaning."
+],
+questions:[
+{q:"Choose the correct option: The number of students ______ increasing.",a:"is",options:["is","are","were","be"],e:"The number of = singular."},
+{q:"Choose the correct option: A number of students ______ absent.",a:"are",options:["are","is","was","be"],e:"A number of = plural meaning several."},
+{q:"Choose the correct option: The list of answers ______ on the desk.",a:"is",options:["is","are","were","be"],e:"Main subject is list, singular."},
+{q:"Choose the correct option: The team ______ discussing their ideas.",a:"are",options:["are","is only","has only","be"],e:"British English can use plural when group members are seen individually."},
+{q:"Choose the correct option: Each of the options ______ possible.",a:"is",options:["is","are","were","be"],e:"Each is singular."}
+]
+},
+{
+id:"b6",
+title:"6 — One / ones / so / not / do so",
+desc:"Short substitutes that avoid repetition in advanced writing.",
+kazakh:`<h3>Қазақша</h3><p><b>One/ones</b> noun қайталауды алмастырады. <b>So/not</b> whole clause алмастырады. <b>Do so</b> action қайталауды алмастырады.</p>`,
+russian:`<h3>Русский</h3><p><b>One/ones</b> заменяют noun. <b>So/not</b> заменяют целую clause. <b>Do so</b> заменяет повтор действия.</p>`,
+mustknow:[
+"one = singular noun substitute",
+"ones = plural noun substitute",
+"I think so / I hope not",
+"do so = repeat an action",
+"Use substitutes to avoid repetition."
+],
+questions:[
+{q:"Choose the correct option: I need a pen. Do you have ______?",a:"one",options:["one","ones","so","do so"],e:"One replaces a singular noun."},
+{q:"Choose the correct option: These shoes are better than the old ______.",a:"ones",options:["ones","one","so","not"],e:"Ones replaces plural noun."},
+{q:"Choose the correct option: Will it rain? I hope ______.",a:"not",options:["not","one","ones","do so"],e:"Hope not replaces a negative clause."},
+{q:"Choose the correct option: She refused to apologise, although she was asked to ______.",a:"do so",options:["do so","one","ones","so"],e:"Do so replaces the action apologise."},
+{q:"Choose the correct option: Is he coming? I think ______.",a:"so",options:["so","one","ones","do"],e:"Think so replaces a whole clause."}
+]
+},
+{
+id:"b7",
+title:"7 — Gradable / non-gradable adjectives",
+desc:"Use very with gradable adjectives; absolutely/completely with many non-gradable adjectives.",
+kazakh:`<h3>Қазақша</h3><p><b>Gradable</b>: very cold, very good. <b>Non-gradable</b>: absolutely impossible, completely full. Very impossible дұрыс емес.</p>`,
+russian:`<h3>Русский</h3><p><b>Gradable</b>: very cold, very useful. <b>Non-gradable</b>: absolutely impossible, completely full. Very impossible неверно.</p>`,
+mustknow:[
+"gradable: very good / very cold",
+"non-gradable: absolutely impossible",
+"completely full / totally wrong",
+"not very unique",
+"Use extreme adverbs with extreme adjectives."
+],
+questions:[
+{q:"Choose the correct option: The answer is ______ wrong.",a:"completely",options:["completely","very","much","many"],e:"Wrong can be intensified with completely/totally."},
+{q:"Choose the correct option: It is ______ impossible.",a:"absolutely",options:["absolutely","very","many","much"],e:"Impossible is non-gradable."},
+{q:"Choose the correct option: The room is ______ cold.",a:"very",options:["very","absolutely only","completely only","totally only"],e:"Cold is gradable."},
+{q:"Choose the incorrect phrase:",a:"very unique",options:["very unique","absolutely unique","very useful","completely full"],e:"Unique is normally non-gradable."},
+{q:"Choose the correct option: The bottle is ______ full.",a:"completely",options:["completely","very","many","much"],e:"Full often takes completely/totally."}
+]
+},
+{
+id:"b8",
+title:"8 — Comment and viewpoint adverbs",
+desc:"Adverbs that show attitude or perspective.",
+kazakh:`<h3>Қазақша</h3><p><b>Comment adverbs</b> сөйлеушінің attitude-ын көрсетеді: unfortunately, clearly. <b>Viewpoint adverbs</b> perspective көрсетеді: economically, politically.</p>`,
+russian:`<h3>Русский</h3><p><b>Comment adverbs</b> показывают отношение автора: unfortunately, clearly. <b>Viewpoint adverbs</b> показывают сферу/перспективу: economically, politically.</p>`,
+mustknow:[
+"Unfortunately = writer’s attitude",
+"Clearly = writer’s judgement",
+"Economically = from economic view",
+"Politically = from political view",
+"Usually placed near sentence beginning."
+],
+questions:[
+{q:"Choose the comment adverb: ______, the results were unreliable.",a:"Unfortunately",options:["Unfortunately","Economically","Politically","Scientifically only"],e:"Unfortunately shows attitude."},
+{q:"Choose the viewpoint adverb: ______, the plan is risky.",a:"Economically",options:["Economically","Sadly","Luckily","Clearly"],e:"Economically means from an economic perspective."},
+{q:"Choose the correct option: ______, the argument is weak.",a:"Clearly",options:["Clearly","Economically","Politically","Financially only"],e:"Clearly shows the writer’s judgement."},
+{q:"What does 'politically' show?",a:"a political viewpoint",options:["a political viewpoint","emotion only","time","frequency"],e:"Politically shows perspective."},
+{q:"Choose the best sentence:",a:"Scientifically, the claim is difficult to prove.",options:["Scientifically, the claim is difficult to prove.","Scientifically the claim difficult prove.","The scientifically claim is prove.","Claim scientifically difficult."],e:"Viewpoint adverb at the beginning is correct."}
+]
+},
+{
+id:"b9",
+title:"9 — Tricky prepositions",
+desc:"Small differences: between/among, except/except for, dependent on, reason for.",
+kazakh:`<h3>Қазақша</h3><p>Preposition қате болса, advanced writing әлсіз көрінеді. Ең керек: <b>between</b> нақты items, <b>among</b> group; <b>except for</b> whole statement-ті түзетеді.</p>`,
+russian:`<h3>Русский</h3><p>Ошибки в prepositions сильно портят advanced style. Главное: <b>between</b> для отдельных items, <b>among</b> для группы; <b>except for</b> корректирует всё утверждение.</p>`,
+mustknow:[
+"between two or more separate items",
+"among a group",
+"except = excluding",
+"except for = correcting a general statement",
+"dependent on / reason for"
+],
+questions:[
+{q:"Choose the correct option: The choice is ______ the three candidates.",a:"between",options:["between","among","except","for"],e:"Between can be used for separate, clearly identified items."},
+{q:"Choose the correct option: She felt comfortable ______ friends.",a:"among",options:["among","between","except","for"],e:"Among is used with a group."},
+{q:"Choose the correct option: Everyone came ______ Ali.",a:"except",options:["except","except for","among","between"],e:"Except means excluding Ali."},
+{q:"Choose the correct option: The essay was good, ______ a few spelling mistakes.",a:"except for",options:["except for","except","among","between"],e:"Except for corrects a general positive statement."},
+{q:"Choose the correct option: The result is dependent ______ the method.",a:"on",options:["on","from","of","at"],e:"Correct collocation: dependent on."}
+]
+},
+{
+id:"b10",
+title:"10 — It-cleft and inversion",
+desc:"Focus and emphasis in formal advanced English.",
+kazakh:`<h3>Қазақша</h3><p><b>It-cleft</b> focus береді: <i>It was the evidence that changed everything</i>. <b>Inversion</b> formal emphasis береді: <i>Rarely have we seen...</i></p>`,
+russian:`<h3>Русский</h3><p><b>It-cleft</b> выделяет важную часть предложения. <b>Inversion</b> используется для формального усиления после negative adverbials.</p>`,
+mustknow:[
+"It was X that...",
+"What matters is...",
+"Rarely have we...",
+"Never had I...",
+"Not only did he..."
+],
+questions:[
+{q:"Choose the correct option: It was the evidence ______ changed the result.",a:"that",options:["that","what","where","whether"],e:"It-cleft structure: It was X that..."},
+{q:"Choose the correct option: ______ matters is accuracy.",a:"What",options:["What","That","Which","Whether"],e:"What-cleft: What matters is..."},
+{q:"Choose the correct option: Rarely ______ such strong evidence.",a:"have we seen",options:["have we seen","we have seen","we seen","did we saw"],e:"Rarely at the beginning requires inversion."},
+{q:"Choose the correct option: Not only ______ the problem, but she solved it.",a:"did she identify",options:["did she identify","she identified","identified she","she did identified"],e:"Not only at the beginning requires inversion."},
+{q:"Choose the correct option: Never ______ such a clear explanation.",a:"had I heard",options:["had I heard","I had heard","heard I had","did I heard"],e:"Never at the beginning requires inversion."}
+]
+},
+  ];
+
+function shuffle(arr){
+  const a=[...arr];
+  for(let i=a.length-1;i>0;i--){
+    const j=Math.floor(Math.random()*(i+1));
+    [a[i],a[j]]=[a[j],a[i]];
+  }
+  return a;
+}
+
+function norm(text){
+  return String(text||"")
+    .toLowerCase()
+    .replace(/\s+/g," ")
+    .replace(/[.,;:!?()«»"']/g,"")
+    .trim();
+}
+
+function render(){
+  const nav=document.getElementById("nav");
+  const app=document.getElementById("app");
+
+  nav.innerHTML=DATA.map((block,i)=>`
+    <a href="#${block.id}">${i+1}</a>
+  `).join("");
+
+  app.innerHTML=DATA.map((block,bi)=>{
+    const questionsHTML=block.questions.map((item,qi)=>{
+      item.options=shuffle(item.options);
+      item.correctIndex=item.options.findIndex(opt=>norm(opt)===norm(item.a));
+
+      return `
+        <div class="q">
+          <div class="qtag">Super short test</div>
+          <div class="qtitle">${qi+1}. ${item.q}</div>
+          ${item.options.map((opt,oi)=>`
+            <label class="opt">
+              <input type="radio" name="b${bi}-q${qi}" value="${oi}">
+              ${String.fromCharCode(65+oi)}) ${opt}
+            </label>
+          `).join("")}
+        </div>
+      `;
+    }).join("");
+
+    return `
+      <section class="card" id="${block.id}">
+        <h2>${block.title}</h2>
+        <div class="desc">${block.desc}</div>
+
+        <div class="langbox">
+          <div class="lang">${block.kazakh}</div>
+          <div class="lang">${block.russian}</div>
+        </div>
+
+        <div class="keybox">
+          <h3>Must-know</h3>
+          <div class="grid">
+            ${block.mustknow.map(k=>`<div class="pill">${k}</div>`).join("")}
+          </div>
+        </div>
+
+        <h3 style="color:#166534;margin-top:20px;">Test — 5 questions</h3>
+
+        ${questionsHTML}
+
+        <button class="btn" onclick="checkBlock(${bi})">
+          Нәтижені көрсету / Показать результат
+        </button>
+
+        <div class="result" id="result-${bi}"></div>
+      </section>
+    `;
+  }).join("") + `
+    <div class="footer">
+      Source: Advanced Grammar in Use — Martin Hewings, Cambridge University Press<br>
+      © @elnazm_ln
+    </div>
+  `;
+}
+
+function checkBlock(bi){
+  const block=DATA[bi];
+  const box=document.getElementById("result-"+bi);
+
+  let score=0;
+  let html="";
+
+  block.questions.forEach((item,qi)=>{
+    const selected=document.querySelector(`input[name="b${bi}-q${qi}"]:checked`);
+    const selectedIndex=selected ? Number(selected.value) : -1;
+    const ok=selectedIndex===item.correctIndex;
+
+    if(ok) score++;
+
+    const yourAnswer=selectedIndex>=0
+      ? `${String.fromCharCode(65+selectedIndex)}) ${item.options[selectedIndex]}`
+      : "Жауап таңдалмаған / Ответ не выбран";
+
+    const correctAnswer=`${String.fromCharCode(65+item.correctIndex)}) ${item.a}`;
+
+    html+=`
+      <div class="ans ${ok ? "ok" : "bad"}">
+        <div><b>${qi+1}. ${item.q}</b></div>
+
+        <div class="${ok ? "oktxt" : "badtxt"}">
+          ${ok ? "Дұрыс / Верно" : "Қате / Неверно"}
+        </div>
+
+        <div class="ex">
+          <b>Ваш ответ:</b><br>
+          ${yourAnswer}
+        </div>
+
+        <div class="ex">
+          <b>Правильный ответ:</b><br>
+          ${correctAnswer}
+        </div>
+
+        <div class="ex">
+          <b>Түсіндірме / Пояснение:</b><br>
+          ${item.e}
+        </div>
+      </div>
+    `;
+  });
+
+  const percent=Math.round(score/block.questions.length*100);
+
+  box.innerHTML=`
+    <div class="summary">
+      <h3>${score} / ${block.questions.length} дұрыс</h3>
+      <p>Результат: <b>${percent}%</b></p>
+    </div>
+    ${html}
+  `;
+
+  box.scrollIntoView({
+    behavior:"smooth",
+    block:"start"
+  });
+}
+
+render();
+
+document.addEventListener("contextmenu",e=>e.preventDefault());
+document.addEventListener("dragstart",e=>e.preventDefault());
+
+document.addEventListener("keydown",function(e){
+  const k=e.key.toUpperCase();
+
+  if(
+    e.key==="F12" ||
+    (e.ctrlKey && e.shiftKey && ["I","J","C"].includes(k)) ||
+    (e.ctrlKey && ["U","S","P","A","C"].includes(k))
+  ){
+    e.preventDefault();
+  }
+});
+</script>
+
+</body>
+</html>
